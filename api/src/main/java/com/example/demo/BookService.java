@@ -14,21 +14,21 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public List<Book> getAllBooks() {
+    public List<Buku> getAllBooks() {
         return bookRepository.findAll();
     }
 
-    public Book getBookById(Long id) {
+    public Buku getBookById(Long id) {
         return bookRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Book not found with id: " + id));
     }
 
-    public Book createBook(Book book) {
+    public Buku createBook(Buku book) {
         return bookRepository.save(book);
     }
 
-    public Book updateBook(Long id, Book updated) {
-        Book existing = getBookById(id);
+    public Buku updateBook(Long id, Buku updated) {
+        Buku existing = getBookById(id);
 
         existing.setTitle(updated.getTitle());
         existing.setAuthor(updated.getAuthor());
@@ -43,7 +43,7 @@ public class BookService {
         bookRepository.deleteById(id);
     }
 
-    public List<Book> searchByTitle(String title) {
+    public List<Buku> searchByTitle(String title) {
         return bookRepository.findByTitleContainingIgnoreCase(title);
     }
 }
