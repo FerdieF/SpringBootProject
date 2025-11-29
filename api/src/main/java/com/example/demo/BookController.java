@@ -29,20 +29,20 @@ public class BookController {
 
     // GET /api/books
     @GetMapping
-    public List<Book> getAll() {
+    public List<Buku> getAll() {
         return bookService.getAllBooks();
     }
 
     // GET /api/books/{id}
     @GetMapping("/{id}")
-    public Book getOne(@PathVariable Long id) {
+    public Buku getOne(@PathVariable Long id) {
         return bookService.getBookById(id);
     }
 
     // POST /api/books
     @PostMapping
-    public ResponseEntity<Book> create(@RequestBody Book book) {
-        Book saved = bookService.createBook(book);
+    public ResponseEntity<Buku> create(@RequestBody Buku book) {
+        Buku saved = bookService.createBook(book);
         return ResponseEntity
                 .created(URI.create("/api/books/" + saved.getId()))
                 .body(saved);
@@ -50,7 +50,7 @@ public class BookController {
 
     // PUT /api/books/{id}
     @PutMapping("/{id}")
-    public Book update(@PathVariable Long id, @RequestBody Book book) {
+    public Buku update(@PathVariable Long id, @RequestBody Buku book) {
         return bookService.updateBook(id, book);
     }
 
@@ -63,7 +63,7 @@ public class BookController {
 
     // GET /api/books/search?title=Clean
     @GetMapping("/search")
-    public List<Book> search(@RequestParam String title) {
+    public List<Buku> search(@RequestParam String title) {
         return bookService.searchByTitle(title);
     }
 }
