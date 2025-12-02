@@ -18,7 +18,7 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    public Buku getBookById(Long id) {
+    public Buku getBookById(Integer id) {
         return bookRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Book not found with id: " + id));
     }
@@ -27,23 +27,24 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    public Buku updateBook(Long id, Buku updated) {
+    public Buku updateBook(Integer id, Buku bukuBaru) {
         Buku existing = getBookById(id);
 
-        existing.setTitle(updated.getTitle());
-        existing.setAuthor(updated.getAuthor());
-        existing.setPrice(updated.getPrice());
-        existing.setStock(updated.getStock());
-        existing.setDescription(updated.getDescription());
+        existing.setJudulBuku(bukuBaru.getJudulBuku());
+        existing.setPenulis(bukuBaru.getPenulis());
+        existing.setGenre(bukuBaru.getGenre());
+        existing.setPenerbit(bukuBaru.getPenerbit());
+        existing.setTahunRilis(bukuBaru.getTahunRilis());
+        existing.setBahasa(bukuBaru.getBahasa());
 
         return bookRepository.save(existing);
     }
 
-    public void deleteBook(Long id) {
+    public void deleteBook(Integer id) {
         bookRepository.deleteById(id);
     }
 
-    public List<Buku> searchByTitle(String title) {
-        return bookRepository.findByTitleContainingIgnoreCase(title);
+    public List<Buku> searchByTitle(String judul) {
+        return bookRepository.findByJudulBukuContainingIgnoreCase(judul);
     }
 }

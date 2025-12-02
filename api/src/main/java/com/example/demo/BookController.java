@@ -35,7 +35,7 @@ public class BookController {
 
     // GET /api/books/{id}
     @GetMapping("/{id}")
-    public Buku getOne(@PathVariable Long id) {
+    public Buku getOne(@PathVariable Integer id) {
         return bookService.getBookById(id);
     }
 
@@ -44,19 +44,19 @@ public class BookController {
     public ResponseEntity<Buku> create(@RequestBody Buku book) {
         Buku saved = bookService.createBook(book);
         return ResponseEntity
-                .created(URI.create("/api/books/" + saved.getId()))
+                .created(URI.create("/api/books/" + saved.getIdBuku()))
                 .body(saved);
     }
 
     // PUT /api/books/{id}
     @PutMapping("/{id}")
-    public Buku update(@PathVariable Long id, @RequestBody Buku book) {
+    public Buku update(@PathVariable Integer id, @RequestBody Buku book) {
         return bookService.updateBook(id, book);
     }
 
     // DELETE /api/books/{id}
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
         bookService.deleteBook(id);
         return ResponseEntity.noContent().build();
     }

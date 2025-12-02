@@ -4,8 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface BookRepository extends JpaRepository<Buku, Long> {
-
-    // Search by title (case-insensitive)
-    List<Buku> findByTitleContainingIgnoreCase(String title);
+public interface BookRepository extends JpaRepository<Buku, Integer> {
+    List<Buku> findByJudulBukuContainingIgnoreCase(String judul);
 }

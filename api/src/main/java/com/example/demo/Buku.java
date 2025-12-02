@@ -11,29 +11,31 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Buku {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_buku")
-    private Long idBuku;
+    private Integer idBuku;
 
-    @Column(name = "judul_buku", nullable = false)
+    @Column(name = "judul_buku")
     private String judulBuku;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "genre")
     private Genre genre;
 
     @Column(name = "tahun_rilis")
     private Integer tahunRilis;
 
-    @Column(name = "penulis")
     private String penulis;
-
-    @Column(name = "penerbit")
     private String penerbit;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "bahasa")
     private Bahasa bahasa;
+
+    public enum Genre {
+        self_improvement, sejarah, horor, psikologi
+    }
+
+    public enum Bahasa {
+        inggris, indonesia
+    }
 }
