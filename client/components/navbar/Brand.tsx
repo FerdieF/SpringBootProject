@@ -1,13 +1,21 @@
-// components/navbar/Brand.tsx
-import Link from "next/link";
+"use client";
 
 const Brand = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
-    <Link href="/" className="flex items-center gap-2 font-semibold">
+    <button
+      className="flex cursor-pointer items-center gap-2 font-semibold"
+      onClick={scrollToTop}
+    >
       <span className="text-foreground text-lg tracking-tight">
         Buku<span className="text-accent">Ku</span>
       </span>
-    </Link>
+    </button>
   );
 };
 
