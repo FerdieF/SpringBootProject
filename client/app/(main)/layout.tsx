@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
-export default function PublicLayout({
+export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;

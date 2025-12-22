@@ -1,12 +1,11 @@
-// components/books-showcase/BooksShowcaseSection.tsx
-import { BookShowcase } from "@/types/book";
 import BooksShowcaseHeader from "./BooksShowcaseHeader";
 import BooksCarousel from "./BooksCarousel";
+import { Book } from "@/types/book";
 
 interface BooksShowcaseSectionProps {
   title: string;
   subtitle: string;
-  books: BookShowcase[];
+  books: Book[];
   gradient: string;
 }
 

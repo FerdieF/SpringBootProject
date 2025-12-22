@@ -3,10 +3,10 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import BookShowcaseCard from "./BookShowcaseCard";
-import { BookShowcase } from "@/types/book";
+import { Book } from "@/types/book";
 
 interface BooksCarouselProps {
-  books: BookShowcase[];
+  books: Book[];
 }
 
 const BooksCarousel = ({ books }: BooksCarouselProps) => {
