@@ -5,14 +5,14 @@ import { Star } from "lucide-react";
 
 interface BookShowcaseCardProps {
   title: string;
-  image: string;
+  cover: string;
   rating: number;
   price: number;
 }
 
 const BookShowcaseCard = ({
   title,
-  image,
+  cover,
   rating,
   price,
 }: BookShowcaseCardProps) => {
@@ -21,7 +21,7 @@ const BookShowcaseCard = ({
       {/* Book image */}
       <div className="books-showcase-card-image-wrapper">
         <Image
-          src={image}
+          src={cover}
           alt={title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
