@@ -19,7 +19,7 @@ const MobileNav = () => {
             aria-label="Open menu"
             className="rounded-xl border border-slate-200 p-2"
           >
-            <Menu className="h-5 w-5 text-slate-700" />
+            <Menu className="text-accent-foreground h-5 w-5" />
           </Button>
         </SheetTrigger>
 

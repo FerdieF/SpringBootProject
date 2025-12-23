@@ -10,9 +10,9 @@ const BookCard = ({ book }: Props) => {
   return (
     <Link
       href={`/books/${book.id}`}
-      className="group rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+      className="group overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
     >
-      <div className="relative aspect-3/4 overflow-hidden rounded-t-2xl">
+      <div className="relative aspect-3/4 overflow-hidden">
         <Image
           src={book.cover}
           alt={book.title}
@@ -22,10 +22,13 @@ const BookCard = ({ book }: Props) => {
       </div>
 
       <div className="p-4">
-        <h3 className="line-clamp-2 font-semibold text-gray-900">
+        <h3 className="line-clamp-2 text-sm font-semibold text-gray-900">
           {book.title}
         </h3>
-        <p className="mt-1 text-sm text-gray-500">{book.author}</p>
+        <p className="mt-1 text-xs text-gray-500">{book.author}</p>
+        <p className="mt-2 text-sm font-bold text-blue-600">
+          Rp {book.price.toLocaleString("id-ID")}
+        </p>
       </div>
     </Link>
   );
