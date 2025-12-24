@@ -4,8 +4,7 @@ import HeroSection from "@/components/hero/HeroSection";
 import HowItWorksSection from "@/components/how-it-works/HowItWorksSection";
 import TestimonialsSection from "@/components/testimonials/TestimonialsSection";
 import WhyChooseUsSection from "@/components/why-choose-us/WhyChooseUsSection";
-import { NEW_ARRIVALS_BOOKS_DATA } from "@/data/new-arrivals";
-import { TOP_SALES_BOOKS_DATA } from "@/data/top-sales";
+import { DUMMY_BOOKS } from "@/data/dummy-books";
 
 export default function Home() {
   return (
@@ -15,13 +14,13 @@ export default function Home() {
       <BooksShowcaseSection
         title="Buku Terlaris"
         subtitle="Buku paling laris dan paling diminati pembaca"
-        books={TOP_SALES_BOOKS_DATA}
+        books={DUMMY_BOOKS.slice(0, 8)}
         gradient="top-sales-books-showcase-section"
       />
       <BooksShowcaseSection
         title="Buku Baru"
         subtitle="Rilisan terbaru yang siap menemani bacaanmu"
-        books={NEW_ARRIVALS_BOOKS_DATA}
+        books={DUMMY_BOOKS.slice(8, 17)}
         gradient="new-arrivals-books-showcase-section"
       />
       <HowItWorksSection />

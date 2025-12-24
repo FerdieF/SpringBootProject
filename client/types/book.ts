@@ -5,4 +5,6 @@ export interface Book {
   cover: string;
   rating: number;
   price: number;
+  genre: string[];
+  description: string;
 }

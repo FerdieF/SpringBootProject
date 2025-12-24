@@ -1,6 +1,4 @@
-// components/cta/CtaSection.tsx
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
@@ -22,10 +20,7 @@ const CTASection = () => {
           {/* Actions */}
           <div className="cta-content-actions-wrapper">
             <Button size="lg" asChild>
-              <Link href="/books">
-                Jelajahi Buku
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              <Link href="/books">Jelajahi Buku</Link>
             </Button>
 
             <Button
